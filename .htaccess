@@ -1,0 +1,59 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-S [OR]
+RewriteCond %{REQUEST_FILENAME} !-l [OR]
+RewriteCond %{REQUEST_FILENAME} !-d 
+
+#view
+RewriteRule ^view/(\d+)/.*$ ./index.php?route=post/viewsingle&post_id=$1
+#post
+RewriteRule ^slide/(\d+)/.*$ ./index.php?route=post/single&post_id=$1
+#category/pagination
+RewriteRule ^category/(\d+)/(\d+).*$ ./index.php?route=post/listing&cat_id=$1&page=$2
+#category
+RewriteRule ^category/(\d+) ./index.php?route=post/listing&cat_id=$1
+#category/pagination
+RewriteRule ^user/(\d+)/(\d+).*$ ./index.php?route=post/userlisting&user_id=$1&page=$2
+#user
+RewriteRule ^user/(\d+).*$ ./index.php?route=post/userlisting&user_id=$1
+#create-slideshow
+RewriteRule ^create ./index.php?route=account/slides
+#edit-slideshow
+RewriteRule ^edit/(\d+).*$ ./index.php?route=account/slides&slide_id=$1
+#sign-Up
+RewriteRule ^signup ./index.php?route=account/register
+#sign-Out
+RewriteRule ^signout ./index.php?route=account/logout
+#search/pagination
+RewriteRule ^search/([a-zA-Z0-9]+)/(\d+).*$ ./index.php?route=post/search&text=$1&page=$2 
+#search
+RewriteRule ^search/([a-zA-Z0-9]+).*$ ./index.php?route=post/search&text=$1 
+#tagged/pagination
+RewriteRule ^tagged/(\d+)/(\d+).*$ ./index.php?route=post/taglisting&tag_id=$1&page=$2
+#tagged
+RewriteRule ^tagged/(\d+) ./index.php?route=post/taglisting&tag_id=$1
+#sign In
+RewriteRule ^signin ./index.php?route=account/signin
+#login
+RewriteRule ^login ./index.php?route=account/login
+#ManageAccount
+#editprofile
+RewriteRule ^account/edit ./index.php?route=account/editprofile
+#changepwd
+RewriteRule ^account/chngpwd ./index.php?route=account/changepwd
+#login
+RewriteRule ^account ./index.php?route=account/index
+#aboutus
+RewriteRule ^aboutus ./index.php?route=information/information&id=59
+#terms
+RewriteRule ^terms ./index.php?route=information/information&id=61
+#privacy
+RewriteRule ^privacy ./index.php?route=information/information&id=62
+#sitemap
+RewriteRule ^sitemap ./index.php?route=information/sitemap
+#asd
+#RewriteRule ^asd/(\d+)/.*$ ./index.php?route=account/asd&page=$1
+RewriteRule ^asd/(\d+).*$ ./index.php?route=account/asd&page=$1
+RewriteRule ^asd ./index.php?route=account/asd
+#edit-slideshow-admin
+RewriteRule ^editslide/(\d+).*$ ./index.php?route=account/editslide&slide_id=$1

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>elFinder file select demo - jsFiddle demo by troex</title>
+  
+  <script type="text/javascript" src="elFinder%20file%20select%20demo%20-%20jsFiddle%20demo%20by%20troex_files/jquery-1.js"></script>
+  <link rel="stylesheet" type="text/css" href="elFinder%20file%20select%20demo%20-%20jsFiddle%20demo%20by%20troex_files/normalize.css">
+  
+  
+  <link rel="stylesheet" type="text/css" href="elFinder%20file%20select%20demo%20-%20jsFiddle%20demo%20by%20troex_files/result-light.css">
+  
+    
+    
+      <script type="text/javascript" src="elFinder%20file%20select%20demo%20-%20jsFiddle%20demo%20by%20troex_files/jquery-ui.js"></script>
+    
+  
+    
+      <link rel="stylesheet" type="text/css" href="elFinder%20file%20select%20demo%20-%20jsFiddle%20demo%20by%20troex_files/jquery-ui.css">
+    
+    
+  
+    
+      <link rel="stylesheet" type="text/css" href="elFinder%20file%20select%20demo%20-%20jsFiddle%20demo%20by%20troex_files/elfinder.css">
+    
+    
+  
+    
+    
+      <script type="text/javascript" src="elFinder%20file%20select%20demo%20-%20jsFiddle%20demo%20by%20troex_files/elfinder.js"></script>
+    
+  
+  <style type="text/css">
+    .button {
+  width: 100px;
+  position:relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+  margin:0 3px 3px 0;
+  padding:1px 0;
+  text-align:center;
+  border:1px solid #ccc;
+  background-color:#eee;
+  margin:.1em;
+  padding:.3em .7em;
+  border-radius:5px; 
+  -moz-border-radius:5px; 
+  -webkit-border-radius:5px;
+  cursor:pointer;
+}
+input { line-height: 30px; width: 400px; }
+  </style>
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+$('#select-button').click(function(){
+    var f = $('<div></div>').elfinder({
+        url : 'php/connector.php',
+        height: 290,
+        docked: false,
+        dialog: { width: 200, modal: true },
+        closeOnEditorCallback: true,
+        editorCallback: function(url) {
+            $('#fileurl').val(url);
+        }
+  });
+});
+
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <input id="fileurl" type="text">
+<div class="button" id="select-button">select file</div>
+
+  
+
+
+
+
+
+</body></html>

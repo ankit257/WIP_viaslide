@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script><script src="js/elfinder.full.js" type="text/javascript" charset="utf-8"></script>
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/elfinder.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/theme.css">
+
+		<!-- elFinder JS (REQUIRED) -->
+<script type="text/javascript" src="js/elfinder.min.js"></script>
+
+		<!-- elFinder translation (OPTIONAL) -->
+<script type="text/javascript" src="js/i18n/elfinder.ru.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+$().ready(function() {
+    var opt = {      // Must change variable name
+    url : 'php/connector.php',
+    lang : 'en',
+    editorCallback : function(url) {document.getElementById('field').value=url;},    // Must change the form field id
+    closeOnEditorCallback : true,
+    docked : false,
+    dialog : { title : 'File Manager', height: 500, modal: true  },
+    }
+
+    $('#open').click(function() {                        // Must change the button's id
+    $('#finder_browse').elfinder(opt)                // Must update the form field id
+    $('#finder_browse').elfinder($(this).attr('id'));   // Must update the form field id
+    })
+
+});
+
+</script>
+</head>
+<body>
+    <div id="finder_browse"></div>
+    <input type="text" id="field" name="img" value="" />
+    <input type="button" id="open" value="browse..." />
+</body>
+</html>

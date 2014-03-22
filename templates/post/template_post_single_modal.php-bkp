@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta keywords="">
+<meta description="">
+<title>Welcome to ViaSlide</title>
+
+<link href="<?php echo THEMEPATH; ?>css/style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo THEMEPATH; ?>css/pagination.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo THEMEPATH; ?>bootplus/css/bootplus.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo THEMEPATH; ?>bootplus/css/bootplus.min.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo THEMEPATH; ?>bootplus/css/bootplus-responsive.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo THEMEPATH; ?>bootplus/css/bootplus-responsive.min.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo THEMEPATH; ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+
+<style type="text/css">
+    @font-face {
+    font-family: 'FontAwesome';
+    src: url('"<?php echo THEMEPATH; ?>font-awesome/font/fontawesome-webfont.eot")?v=3.1.1');
+    src: url('"<?php echo THEMEPATH; ?>font-awesome/font/fontawesome-webfont.eot")?#iefix&v=3.1.1') format('embedded-opentype'),
+    url('"<?php echo THEMEPATH; ?>font-awesome/font/fontawesome-webfont.woff")?v=3.1.1') format('woff'),
+    url('"<?php echo THEMEPATH; ?>font-awesome/font/fontawesome-webfont.ttf")?v=3.1.1') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+    </style>
+
+<style>
+<? /*
+<!--link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"-->
+
+*/ ?>
+/* Main Navigation */
+#nav {
+    position:relative;
+    width:850px;
+    margin:0 auto;
+    margin-top:50px;
+    padding:10px;
+}
+ 
+.navigation {
+    margin:auto;
+    position:relative;
+    /*float:left;*/ 
+    white-space:nowrap
+    
+}
+ 
+.navigation li {
+    display:inline;
+    font-size:12px;
+    font-weight:bold;
+    margin:0;
+    padding:0;
+    float:left;
+    position:relative;
+   
+}
+ 
+.navigation li a {
+  
+    color:#fff;
+   background-color: #000;
+    text-decoration:none;
+    display:inline-block; 
+  
+
+     
+    -webkit-transition:color 0.2s linear, background 0.2s linear;  
+    -moz-transition:color 0.2s linear, background 0.2s linear; 
+    -o-transition:color 0.2s linear, background 0.2s linear;   
+    transition:color 0.2s linear, background 0.2s linear;  
+}
+ 
+.navigation li a:hover {
+    background:red;
+    color:000;
+}
+ 
+.navigation li a.first {
+    border-left: 0 none;
+}
+ 
+.navigation li a.last {
+    border-right: 0 none;
+}
+ 
+.navigation li:hover > a {
+  background: rgb(162,215,63); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(162,215,63,1) 0%, rgba(140,187,48,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(162,215,63,1)), color-stop(100%,rgba(140,187,48,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(162,215,63,1) 0%,rgba(140,187,48,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(162,215,63,1) 0%,rgba(140,187,48,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(162,215,63,1) 0%,rgba(140,187,48,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(162,215,63,1) 0%,rgba(140,187,48,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2d73f', endColorstr='#8cbb30',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+/* Drop-Down Navigation */
+.navigation li:hover > ul
+{
+/*these 2 styles are very important,
+being the ones which make the drop-down to appear on hover */
+    visibility:visible; margin-top:-10px;
+    opacity:1;
+}.navigation li:hover > ul>li:hover>a
+{
+   background:#eee; text-shadow:none;border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+}
+ 
+.navigation ul,.navigation ul li ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;   
+/*the next 2 styles are very important,
+being the ones which make the drop-down to stay hidden */
+    visibility:hidden;
+    opacity:0;
+    position: absolute;
+    z-index: 99999;
+    width:177px;
+    background:#f8f8f8;
+    box-shadow:1px 1px 3px #ccc;
+/* css3 transitions for smooth hover effect */
+    -webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
+    -moz-transition:opacity 0.2s linear, visibility 0.2s linear;
+    -o-transition:opacity 0.2s linear, visibility 0.2s linear;
+    transition:opacity 0.2s linear, visibility 0.2s linear;    
+}
+ 
+.navigation ul {
+    top: 43px;
+    left: 1px;
+}
+ 
+.navigation ul li ul {
+    top: 0;
+    left: 181px; /* strong related to width:180px; from above */
+}
+ 
+.navigation ul li {
+    clear:both;
+    width:100%;
+    border:0 none;
+    border-bottom:1px solid #c9c9c9;
+}
+ 
+.navigation ul li a {
+    background:none;
+    padding:7px 14px;
+    color:#616161;
+    text-shadow:1px 1px 0px #fff;
+    text-decoration:none;
+    display:inline-block;
+    border:0 none;
+    float:left;
+    clear:both;
+    width:148px;
+}
+ </style>
+
+ <style>
+a:-webkit-any-link {
+    text-decoration:none !important;
+    }
+    
+. navigation a:link, a:hover {
+    text-decoration:none !important;
+    color:white;
+    }
+    
+a:-moz-any-link{
+    text-decoration:none !important;
+
+}
+img {
+    object-fit:contain;
+    object-position:50%;
+}
+    
+
+
+</style>
+ <style>
+.navigation a:hover:-webkit-any-link {
+    color:white;    
+    }
+    
+.navigation a:hover:-moz-any-link{
+    color:white;
+}
+.card a:-webkit-any-link {
+    color:#69ae37;  
+    }
+    
+.card a:-moz-any-link{
+    color:#69ae37;  
+}
+</style>
+
+
+
+<!--lightbox start-->
+
+
+<!-- Add jQuery library -->
+    <script type="text/javascript" src="<?php echo THEMEPATH; ?>lightbox-div/lib/jquery-1.8.2.min.js"></script>
+
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="<?php echo THEMEPATH; ?>lightbox-div/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+    <!-- Add fancyBox main JS and CSS files -->
+    <script type="text/javascript" src="<?php echo THEMEPATH; ?>lightbox-div/source/jquery.fancybox.js?v=2.1.1"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>lightbox-div/source/jquery.fancybox.css?v=2.1.1" media="screen" />
+
+    <!-- Add Button helper (this is optional) -->
+    <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>lightbox-div/source/helpers/jquery.fancybox-buttons.css?v=1.0.4" />
+    <script type="text/javascript" src="<?php echo THEMEPATH; ?>lightbox-div/source/helpers/jquery.fancybox-buttons.js?v=1.0.4"></script>
+
+    <!-- Add Thumbnail helper (this is optional) -->
+    <link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>lightbox-div/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+    <script type="text/javascript" src="<?php echo THEMEPATH; ?>lightbox-div/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+    <!-- Add Media helper (this is optional) -->
+    <script type="text/javascript" src="<?php echo THEMEPATH; ?>lightbox-div/source/helpers/jquery.fancybox-media.js?v=1.0.4"></script>
+
+    <script type="text/javascript" src="<?php echo THEMEPATH; ?>bootplus/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo THEMEPATH; ?>bootplus/js/bootstrap.js"></script>
+
+    <style type="text/css">
+        .fancybox-custom .fancybox-skin {
+            box-shadow: 0 0 50px #222;
+        }
+    </style>
+<!--lightbox end-->
+
+
+<!--select dropdown start-->
+<link rel="stylesheet" type="text/css" href="<?php echo THEMEPATH; ?>dropdown/stylish-select.css" />
+
+        
+        <script src="<?php echo THEMEPATH; ?>dropdown/jquery.stylish-select.js" type="text/javascript"></script>
+
+      
+        
+        
+      
+        <script type="text/javascript">
+/*
+        $(document).ready(function() {
+            $("#searchSuggest").autocomplete("test.php", {
+                width: 260,
+                delay: 500,
+                matchContains: true,
+                //mustMatch: true,
+                //minChars: 0,
+                //multiple: true,
+                //highlight: false,
+                //multipleSeparator: ",",
+                //selectFirst: false
+            });
+        });
+*/
+        </script>
+        
+        
+<!-- Popup Box for User manage Account -->
+<link rel="stylesheet" href="<?php echo THEMEPATH;?>popbox/css/popbox.css" type="text/css" media="screen" charset="utf-8">
+<script type="text/javascript" charset="utf-8" src="<?php echo THEMEPATH;?>popbox/js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo THEMEPATH;?>popbox/js/popbox.js"></script>
+
+
+<script>
+var old_li='#album-thumb-0';
+function next(){
+var n = old_li.split("-");
+var d = parseInt(n[2])+1;
+var m = n[0]+'-'+n[1]+'-'+d;
+document.getElementById(old_li).style.opacity = "1.0";
+change_content(m);
+if (old_li!= null){
+        
+      }
+     document.getElementById(m).style.opacity = "0.4";
+          old_li = m;
+};
+
+function change_content(id){
+    //alert(id);
+    var x = '#'+id;
+    //alert(x);
+    var src = $("img",x).attr("src");
+    var txt = $("img",x).attr("alt");
+    alert(src);
+    var image_new = src.replace("_0","_2");
+    var image = '<img src="'+ image_new +'"></img>';
+          $("#albumImage").html(image);
+          $("#slidetext").html(txt);
+          old_li = id;
+        
+};
+
+function prev(){
+var n = old_li.split("-");
+var d = parseInt(n[2])-1;
+var m = n[0]+'-'+n[1]+'-'+d;
+document.getElementById(old_li).style.opacity = "1.0";
+change_content(m);
+document.getElementById(m).style.opacity = "0.4";
+old_li = m;
+};
+</script>
+
+
+
+<!-- End Pop Box -->
+
+<style type="text/css">
+.album {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: auto;
+    max-width: 100%
+}
+.album li{
+    display: inline-block;
+    height: auto;
+}
+.album li small{
+display: block;
+position: relative;
+text-align: center;
+text-decoration: none;
+color:#696969;
+font-weight: bold;
+}
+</style>
+
+
+           
+</head>
+<body>
+<!--Slider start-->
+
+
+
+
+
+
+<!--Slider end-->
+
+<!--container starts-->
+<div class="modal-dialog">
+      <div class="modal-content">
+        
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title heading-1">
+        <?php echo $postdata['main']['title']; ?></h4>
+        </div>
+                        <?php 
+                         $total_slide =  ($postdata['images'] ? count($postdata['images']) : '0')+ ($postdata['videos'] ? count($postdata['videos']) : '0');
+                        ?>
+
+
+
+        <div class="modal-body" >
+            <div class="box-center text-center">
+            <ul class="album" style="display;inline; width:500px;overflow-y:hidden;overflow-x:auto;">
+                    <?php if($postdata['videos']) : $i=1; foreach($postdata['videos'] as $video) { $videoId = getYoutubeVideoId($video['video']); ?>
+                        <li id="album-thumb-<?php echo $i;?>"><img src="<?php echo resizeImage($video['video_image'], "common_assets/cache/". $videoId.substr(basename($video['video_image']),0,-4). "_116x56.jpg", 116, 56);?>" alt="Viaslide.com" /></li>
+                    <?php } endif; ?>
+                    <?php if($postdata['images']) :$i=1; foreach($postdata['images'] as $image) { ?>
+                    <?php $img = chk_thumb($image['image'],0);?>
+                        <li id="album-thumb-<?php echo $i;?>"  onClick="change_content(this.id)" class="thumb-nav"><a href="#"><img src="<?php echo DOCROOT.$img;?>" alt ="<small><?php echo $i.'/'.$total_slide.'&nbsp;Slides</small><br>'. $image['title'].'<p>'.$image['content'].'</p>';?>" />
+                            <small><?php echo $i.'/'.$total_slide; ?>&nbsp;Slides</small>
+                        </a></li>
+                    <?php $i++;}   endif; ?>
+            </ul>
+            </div>
+
+            <div class="slide-box">
+                <div class="row-fluid">
+
+                    <span class="prev-slide" onclick="prev()" style="cursor:pointer; display: block;overflow: hidden;position: absolute;width: 32px;height: 32px;background-image: url(http://localhost/viaslide4/beta/view/themes/default/slideshow/skins/carouselarrows-32-32-0.png);left: 2%;top: 50%;margin-top: 23px;background-position: 0% 50%;background-repeat: no-repeat no-repeat;">
+                    
+                </span>
+                <div class="img-box"  id="albumImage">
+                
+                
+                <div class="" style="disaply:block; background-color:black;">
+                <img class="img-responsive" src = "<?php echo $postdata['images'][0]['image'];?>"  style="margin: 0px auto;height:500px; overflow:hidden; width:auto;">
+                </div>
+                
+                </div>
+                <span class="next-slide" onclick="next()" style="display: block; cursor:pointer;  overflow: hidden;position: absolute;width: 32px;height: 32px;background-image: url(http://localhost/viaslide4/beta/view/themes/default/slideshow/skins/carouselarrows-32-32-0.png);right: 2%;top: 50%;margin-top: 23px;background-position: 100% 50%;background-repeat: no-repeat no-repeat;">
+                </span>
+                
+                
+            </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="modal-footerx" style="z-index:99999;">
+        <div id ="slidetext" class="text-center">
+                <?php echo $postdata['images'][0]['title'].'<br><p>'.$postdata['images'][0]['content'].'</p>';?>
+                </div>
+          <!--button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button-->
+        </div>
+      </div><!-- /.modal-content -->
+
+
+    </div><!-- /.modal-dialog -->
+
+
+
+
+<br>
+
+
+
+</body>
+</html>

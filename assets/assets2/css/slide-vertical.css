@@ -1,0 +1,27 @@
+.present{
+    opacity: 1;
+}
+.past, .future{
+opacity: 0;
+
+}
+.slide-vertical.future{
+        -webkit-transform-origin: 0% 0%;
+-moz-transform-origin: 0% 0%;
+-ms-transform-origin: 0% 0%;
+transform-origin: 0% 0%;
+-webkit-transform: translate3d(0, 100%,0);
+-moz-transform:  translate3d(0, 100%,0);
+-ms-transform:  translate3d(0, 100%,0);
+transform:   translate3d(0, 100%,0);
+}
+.slide-vertical .past{
+    -webkit-transform-origin: 0% 0%;
+-moz-transform-origin: 0% 0%;
+-ms-transform-origin: 0% 0%;
+transform-origin: 0% 0%;
+-webkit-transform: translate3d(0,-100%,0);
+-moz-transform:   translate3d(0,-100%,0);
+-ms-transform:  translate3d(0,-100%,0);
+transform:   translate3d(0,-100%,0);
+}

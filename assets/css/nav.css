@@ -1,0 +1,105 @@
+/* Main Navigation */
+#nav {
+    position:relative;
+    width:1000px;
+    margin:0 auto;
+    margin-top:16px;
+    padding:0;
+	float:left
+}
+ 
+#navigation {
+    margin:0; width:1269px;
+
+    float:left;
+	padding:0;
+}
+
+#navigation li {
+    display:inline;
+    font-family: 'BellMTRegular';
+	font-size:13px;
+    font-weight:normal;
+    margin: 0 3.3px 0 0;
+    padding:0;
+    float:left;
+
+	text-transform:uppercase;
+}
+ 
+#navigation li a {
+    padding:4px 19.35px;-moz-padding:4px 19.1px;
+    color:#fff;
+    text-decoration:none;
+    display:inline-block;  
+}
+ 
+#navigation li a:hover {
+    color:#282828;
+}
+ 
+#navigation li a.first {
+    border-left: 0 none;
+}
+ 
+#navigation li a.last {
+    border-right: 0 none;
+}
+ 
+#navigation li:hover > a {
+    background: #a2d73f; /* Old browsers */
+background: -moz-linear-gradient(top, #a2d73f 0%, #8cbb30 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a2d73f), color-stop(100%,#8cbb30)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #a2d73f 0%,#8cbb30 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #a2d73f 0%,#8cbb30 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #a2d73f 0%,#8cbb30 100%); /* IE10+ */
+background: linear-gradient(to bottom, #a2d73f 0%,#8cbb30 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a2d73f', endColorstr='#8cbb30',GradientType=0 ); /* IE6-9 */
+	color:#fff;
+}
+
+
+
+/* Drop-Down Navigation */
+.navigation a:hover > ul
+{
+/*these 2 styles are very important,
+being the ones which make the drop-down to appear on hover */
+    visibility:visible;
+    opacity:1; background:#fff;
+}
+ 
+.navigation a ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+	
+/*the next 2 styles are very important,
+being the ones which make the drop-down to stay hidden */
+    visibility:hidden;
+    opacity:0;
+    position:absolute;
+    z-index: 99999;
+    width:275px;
+    background:#fff;
+    box-shadow:1px 1px 3px #ccc;
+	-moz-box-shadow:1px 1px 3px #ccc;
+/* css3 transitions for smooth hover effect */
+    -webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
+    -moz-transition:opacity 0.2s linear, visibility 0.2s linear;
+    -o-transition:opacity 0.2s linear, visibility 0.2s linear;
+    transition:opacity 0.2s linear, visibility 0.2s linear; margin-left:-24px; float:left; text-align:left; text-indent:20px;}
+ 
+ .navigation a ul li{ background:#000}
+.navigation a:hover ul li  {
+	    background: none repeat scroll 0 0 transparent; width:96%;border-bottom:1px solid #CCC; padding:5px; clear:both;  color:#616161; float:left; text-align:left
+}
+
+
+.navigation a:hover ul li a  {
+	background:#fff ; clear:both; width:96%; color:#616161; float:left; text-align:left
+}
+ .navigation a:hover ul li:hover  {
+	background:#EFEFEF;color:#616161;
+}
+ 

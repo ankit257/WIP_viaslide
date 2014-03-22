@@ -1,0 +1,31 @@
+
+ <link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/smoothness/jquery-ui.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+    
+  
+    
+      <link rel="stylesheet" type="text/css" href="http://elrte.org/release/elfinder/css/elfinder.css">
+    
+    
+  
+    
+    
+      <script type='text/javascript' src="http://elrte.org/release/elfinder/js/elfinder.min.js"></script>
+<script>
+$('#select-button').click(function(){
+    var f = $('<div></div>').elfinder({
+        url : 'php/connector.php',
+        height: 490,
+        docked: false,
+        dialog: { width: 400, modal: true },
+        closeOnEditorCallback: true,
+        editorCallback: function(url) {
+            $('#fileurl').val(url);
+        }
+  });
+});
+</script>
+
+<input type="text" id="fileurl" />
+<div class="button" id="select-button">select file</div>
